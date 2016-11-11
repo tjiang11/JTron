@@ -7,6 +7,7 @@ var ctx = canvas.getContext("2d");
 var w = $("#canvas").width();
 var h = $("#canvas").height();
 var filled_cells = [];
+var headOnCrashCells = [];
 var CYCLER_LIST = [];
 var numAlive;
 var numPlayers;

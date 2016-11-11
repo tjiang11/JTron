@@ -23,14 +23,20 @@ function nextRound() {
 	}, 800);
 }
 
+
 function update() {
-	console.log(numAlive);
+	headOnCrashCells = [];
 	if ((numAlive < 2 && numPlayers > 1) || numAlive < 1) {
 		nextRound();
 	}
 	for (var cycler in CYCLER_LIST) {
 		if (CYCLER_LIST[cycler].alive) {
 			CYCLER_LIST[cycler].move();
+		}
+	}
+	for (var cycler in CYCLER_LIST) {
+		if (CYCLER_LIST[cycler].alive) {
+			CYCLER_LIST[cycler].checkPosition();
 		}
 	}
 }
@@ -44,6 +50,12 @@ function render() {
 			ctx.shadowColor = "white";
 			ctx.fillRect(cycler.x * cell_width, cycler.y * cell_height, cell_width, cell_height);
 		}
+	}
+	for (var i = 0; i < headOnCrashCells.length; i++) {
+		ctx.fillStyle = "white";
+		ctx.shadowBlur = 20;
+		ctx.shadowColor = "white";
+		ctx.fillRect(headOnCrashCells[i][1] * cell_width, headOnCrashCells[i][0] * cell_height, cell_width, cell_height);
 	}
 }
 

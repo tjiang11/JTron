@@ -41,11 +41,22 @@ var Cycler = function(id, x, y, speed) {
 			}
 			self.y = self.y + self.speedy;
 			self.x = self.x + self.speedx;
+		}
+		self.checkPosition = function() {
 			if (self.collide()) {
 				self.die();
-			} else {
-				gameGrid[self.y][self.x] = true;
 			}
+			gameGrid[self.y][self.x] = true;
+		}
+		self.collideHeadOn = function() {
+			for (var i = 0; i < CYCLER_LIST.length; i++) {
+				if (CYCLER_LIST[i] == self) continue;
+				if (CYCLER_LIST[i].x == self.x && CYCLER_LIST[i].y == self.y) {
+					headOnCrashCells.push([self.y, self.x]);
+					return true;
+				}
+			}
+			return false;
 		}
 		self.collide = function() {
 			if (self.x < 0 || self.x >= game_width || self.y < 0 || self.y >= game_height) {
@@ -54,6 +65,10 @@ var Cycler = function(id, x, y, speed) {
 			if (gameGrid[self.y][self.x]) {
 				return true;
 			}
+			if (self.collideHeadOn()) {
+				return true;
+			}
+			
 			return false;
 		}
 		self.die = function() {
