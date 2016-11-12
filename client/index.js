@@ -15,7 +15,7 @@ function nextRound() {
 		$('#leaderBoard').addClass("hidden");
 		clearGrid();
 		numAlive = numPlayers;
-		console.log(numAlive);
+		console.log("nextRound: " + numAlive);
 		CYCLER_LIST = [];
 		setCyclerPositions();
 		setCyclerControls();
@@ -69,9 +69,7 @@ function startUpSequence() {
 	drawGrid();
 	renderStartUpThree();
 	render();
-	console.log(CYCLER_LIST[0].y);
 	setTimeout(function() {
-		console.log(CYCLER_LIST[0].y);
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		drawGrid();
 		renderStartUpTwo();

@@ -18,7 +18,6 @@ var Cycler = function(id, x, y, speed) {
 		}
 		self.moveDown = function() {
 			if (self.speedy != -self.speed) {
-				console.log("d");
 				self.speedy = self.speed;
 				self.speedx = 0;
 			}
@@ -46,7 +45,9 @@ var Cycler = function(id, x, y, speed) {
 			if (self.collide()) {
 				self.die();
 			}
-			gameGrid[self.y][self.x] = true;
+			if (self.y < gameGrid.length && self.y >= 0 && self.x < gameGrid[0].length && self.x >= 0) {
+				gameGrid[self.y][self.x] = true;	
+			}
 		}
 		self.collideHeadOn = function() {
 			for (var i = 0; i < CYCLER_LIST.length; i++) {
