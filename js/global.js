@@ -18,6 +18,14 @@ GAME_STATE_ENUM = {
 	WAITING : 0,
 	PLAYING : 1
 }
+
+DIRECTIONS = {
+	UP : "UP",
+	DOWN : "DOWN",
+	LEFT : "LEFT",
+	RIGHT : "RIGHT"
+}
+
 var GAME_STATE = GAME_STATE_ENUM.WAITING;
 var SCORES = [];
 var gameGrid = new Array(game_height);

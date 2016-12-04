@@ -8,7 +8,7 @@ canvas { display:block; } /* To remove the scrollbars */
 	margin: 0 auto;
 	width: 40vw;
 	height: 30vh;
-	background-image: url('tron_img.png');
+	background-image: url('../res/tron_img.png');
 	background-size: 100%;
 	background-repeat:no-repeat;
 }

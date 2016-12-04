@@ -29,6 +29,7 @@ function update() {
 	if ((numAlive < 2 && numPlayers > 1) || numAlive < 1) {
 		nextRound();
 	}
+	
 	for (var cycler in CYCLER_LIST) {
 		if (CYCLER_LIST[cycler].alive) {
 			CYCLER_LIST[cycler].move();
