@@ -4,11 +4,10 @@
 <link rel="stylesheet" type="text/css" href="css/index.css">
 <!--<div class="sideMenu">test</div>-->
 <div id="menu" class="menu">
-	<div id="tron-logo"></div>
-	<button id="start-btn" class="btn" type="button"><b>LAUNCH</b></button>
+	<img id="tron-logo" src="../res/tron_img.png"/>
 	<div id="gameSettings">
 		<div class="setting">
-			<label id="numberPlayers">2 Players</label>
+			<label id="numberPlayers" class="setting-label">2 Players</label>
 			<br>
 			<input id="selectNumberPlayers" type="range" min="1" max="4" value="2" step="1">
 		</div>
@@ -17,16 +16,17 @@
 			</ul>
 		</div>
 		<div class="setting">
-			<label id="gridSize">Grid Size</label>
+			<label id="gridSize" class="setting-label">Grid Size</label>
 			<br>
 			<input id="selectGridSize" type="range" min="1" max="5" value="2" step="1"> 
 		</div>
 		<div class="setting">
-			<label id="cyclerSpeed">Cycler Speed</label>
+			<label id="cyclerSpeed" class="setting-label">Cycler Speed</label>
 			<br>
 			<input id="selectCyclerSpeed" type="range" min="1" max="5" value="3"" step="1">
 		</div>
 	</div>
+	<button id="start-btn" class="btn" type="button">launch</button>
 </div>
 <div id="leaderBoard" class="hidden">
 	<ul id="leaderUl"></ul>
